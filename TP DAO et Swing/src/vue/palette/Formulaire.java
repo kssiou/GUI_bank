@@ -193,7 +193,7 @@ public class Formulaire extends JFrame  {
         this.getContentPane().add(panel, BorderLayout.CENTER);
 
         this.add(panel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+       // this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
 
