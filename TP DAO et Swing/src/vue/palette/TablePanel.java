@@ -31,7 +31,7 @@ public class TablePanel extends JPanel {
 
         JTableHeader header = table.getTableHeader();
         header.setFont(new Font("Optima", Font.BOLD, 20));
-        header.setForeground(new Color(198, 113, 34));
+        header.setForeground(new Color(6, 0, 3));
         header.setBackground(Color.WHITE);
 
         ((DefaultTableCellRenderer)header.getDefaultRenderer())
@@ -54,10 +54,10 @@ public class TablePanel extends JPanel {
             int row = table.getSelectedRow();
             if(row == -1){
 
-                JOptionPane.showMessageDialog(this,
-                        "Veuillez choisir un client d'abord !!!",
-                        "A L E R T",
-                        JOptionPane.ERROR_MESSAGE);
+                   JOptionPane.showMessageDialog(this,
+                                "Veuillez choisir un client d'abord !!!",
+                                "A L E R T",
+                                JOptionPane.ERROR_MESSAGE);
             }
             else{
 

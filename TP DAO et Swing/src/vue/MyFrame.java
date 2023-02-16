@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class MyFrame extends JFrame {
+public class    MyFrame extends JFrame {
 
     ClassLoader cl = getClass().getClassLoader();
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -28,7 +28,9 @@ public class MyFrame extends JFrame {
 
         Font logoFont = new Font("Optima", Font.BOLD, 15);
         header = new HeaderPanel(Color.WHITE,
-                new ImageIcon(cl.getResource("images/icons/bankIcon64.png")), "myBank", Color.BLACK, logoFont,
+                new ImageIcon(cl.getResource("images/icons/bankIcon64.png")), "", Color.BLACK, logoFont,
+                new ImageIcon((Login.class.getResource("/img/prenom.png"))), "logout", Color.BLACK, logoFont,
+
                 new ImageIcon(cl.getResource("images/icons/menu.png")), "", Color.BLACK, logoFont);
 
 
@@ -66,14 +68,58 @@ public class MyFrame extends JFrame {
 
         buttons.get("Chercher")
                 .addActionListener(click -> System.out.println("btn Chercher cliqué"));
+        buttons.get("Modifier")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        buttons.get("Modifier").setFont(new Font("Optima", Font.BOLD, 20));
+
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Modifier").setForeground(Color.BLUE);
+                        buttons.get("Modifier").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
+        buttons.get("Supprimer")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        buttons.get("Supprimer").setFont(new Font("Optima", Font.BOLD, 20));
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Supprimer").setForeground(Color.BLUE);
+                        buttons.get("Supprimer").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
+
+        buttons.get("Chercher")
+                .addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseEntered(MouseEvent e) {
+                        buttons.get("Chercher").setFont(new Font("Optima", Font.BOLD, 20));
+
+                    }
+
+                    @Override
+                    public void mouseExited(MouseEvent e) {
+                        buttons.get("Chercher").setForeground(Color.BLUE);
+                        buttons.get("Chercher").setFont(new Font("Optima", Font.BOLD, 18));
+
+                    }
+                });
 
         buttons.get("Ajouter")
                 .addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseEntered(MouseEvent e) {
-
-
-                        buttons.get("Ajouter").setForeground(Color.RED);
                         buttons.get("Ajouter").setFont(new Font("Optima", Font.BOLD, 20));
 
                     }
@@ -90,6 +136,12 @@ public class MyFrame extends JFrame {
 
             if(menuPanel.isVisible()) menuPanel.setVisible(false);
             else menuPanel.setVisible(true);
+        });
+        header.getBtn_logout().addActionListener(e->{
+
+           this.setVisible(false);
+           JFrame Login = new Login();
+
         });
 
     }

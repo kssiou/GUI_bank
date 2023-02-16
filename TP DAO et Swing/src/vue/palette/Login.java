@@ -5,20 +5,11 @@ import vue.MyFrame;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
+import javax.swing.*;
 import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JToggleButton;
-import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import javax.swing.ImageIcon;
-import javax.swing.JComboBox;
-import javax.swing.DefaultComboBoxModel;
-import javax.swing.JPasswordField;
 
 public class Login extends JFrame {
 
@@ -79,7 +70,7 @@ public class Login extends JFrame {
         lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
         panel_1.add(lblNewLabel);
 
-        textField = new JTextField();
+        textField = new JTextField("mouad");
         textField.setFont(new Font("Tahoma", Font.PLAIN, 13));
         textField.setBounds(142, 122, 224, 27);
         panel_1.add(textField);
@@ -99,8 +90,20 @@ public class Login extends JFrame {
 
          btnNewButton_1 = new JButton("login");
         btnNewButton_1.addActionListener(click -> {
-            this.setVisible(false);
-            JFrame MyFrame = new MyFrame("admin");
+            String email= textField.getText();
+            String pass= String.valueOf(passwordField.getPassword());
+            System.out.println(pass);
+
+            if(email.equals("mouad")&&pass.equals("123")){
+                            this.setVisible(false);
+           JFrame MyFrame = new MyFrame("admin");}
+            else{
+                JOptionPane.showMessageDialog(this,
+                        "votre mot de passe ou email est invalide",
+                        "A L E R T",
+                        JOptionPane.ERROR_MESSAGE);}
+
+
             })
         ;
         btnNewButton_1.setForeground(new Color(0, 128, 255));
@@ -123,7 +126,7 @@ public class Login extends JFrame {
         lblNewLabel_5.setBounds(36, 228, 77, 13);
         panel_1.add(lblNewLabel_5);
 
-        passwordField = new JPasswordField();
+        passwordField = new JPasswordField("123");
         passwordField.setFont(new Font("Tahoma", Font.PLAIN, 13));
         passwordField.setBounds(142, 175, 224, 27);
         panel_1.add(passwordField);

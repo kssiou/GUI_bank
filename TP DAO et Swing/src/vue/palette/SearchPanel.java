@@ -47,7 +47,7 @@ public class SearchPanel extends JPanel {
     private void initTextField(){
 
        txt_search = new HintTextField("mot-clé",
-               new Color(255, 255, 0),
+               new Color(247, 246, 255),
                new Color(255, 255, 255));
        txt_search.setHorizontalAlignment(SwingConstants.CENTER);
        txt_search.setPreferredSize(new Dimension(200, 25));
@@ -79,8 +79,8 @@ public class SearchPanel extends JPanel {
         setBorder(new EmptyBorder(5,5,5,25));
         //setBorder(new RoundedBorder(true, Color.blue, 15));
 
-        add(pane, BorderLayout.EAST);
-        add(crudButtonsPanel, BorderLayout.WEST);
+        add(pane, BorderLayout.WEST);
+        add(crudButtonsPanel, BorderLayout.EAST);
     }
 
 
